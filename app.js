@@ -27,7 +27,8 @@ app.get('/', (req, res) => {
       <head>
         <link rel="stylesheet" type="text/css" href="/styles.css">
         <script>
-          
+          // Geri sayımın otomatik olarak güncellenmesi için JavaScript kullanıyoruz.
+          // setInterval, belirli bir aralıkta bir işlevi yineler.
           setInterval(function() {
             
             const now = new Date();
@@ -35,13 +36,13 @@ app.get('/', (req, res) => {
             const electionDate = new Date('2023-05-14T08:00:00');
             
             const duration = electionDate - now;
-      
+            // Saniyeleri, dakikaları, saatleri ve günleri hesapla
             days = Math.floor(duration / (1000 * 60 * 60 * 24));
             hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
             minutes = Math.floor((duration / 1000 / 60) % 60);
             seconds = Math.floor((duration / 1000) % 60);
-            
-            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye';
+            // HTML içeriğini güncelle
+            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye kaldı.';
           }, 1000);
         </script>
       </head>
@@ -53,5 +54,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Web sitesi http://localhost:${port} adresinde yayında`);
+  console.log(`Server is running`);
 });
