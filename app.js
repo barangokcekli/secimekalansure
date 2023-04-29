@@ -16,32 +16,32 @@ app.get('/', (req, res) => {
 
   const countdownDiv = `
     <div class="countdown">
-      <h1>Seçimlere kalan süre:</h1>
-      <p>${days} gün, ${hours} saat, ${minutes} dakika, ${seconds} saniye kaldı.</p>
+      <h1>SEÇİME</h1>
+      <p>${days} gün, ${hours} saat, ${minutes} dakika, ${seconds} saniye</p>
+      <h1>KALDI<h1>
     </div>
   `;
 
   res.send(`
     <html>
       <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/styles.css">
         <script>
-          // Geri sayımın otomatik olarak güncellenmesi için JavaScript kullanıyoruz.
-          // setInterval, belirli bir aralıkta bir işlevi yineler.
+          
           setInterval(function() {
-            // Şu anki zamanı al
+            
             const now = new Date();
-            // Seçim tarihini ayarla
+            
             const electionDate = new Date('2023-05-14T08:00:00');
-            // Aradaki farkı hesapla
+            
             const duration = electionDate - now;
-            // Saniyeleri, dakikaları, saatleri ve günleri hesapla
+      
             days = Math.floor(duration / (1000 * 60 * 60 * 24));
             hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
             minutes = Math.floor((duration / 1000 / 60) % 60);
             seconds = Math.floor((duration / 1000) % 60);
-            // HTML içeriğini güncelle
-            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye kaldı.';
+            
+            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye';
           }, 1000);
         </script>
       </head>
