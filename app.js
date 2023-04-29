@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
             minutes = Math.floor((duration / 1000 / 60) % 60);
             seconds = Math.floor((duration / 1000) % 60);
             // HTML içeriğini güncelle
-            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye kaldı.';
+            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye';
           }, 1000);
         </script>
       </head>
