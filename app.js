@@ -1,9 +1,11 @@
 const express = require('express');
-const app = express();
 const moment = require('moment');
 const port = process.env.PORT || 3000;
+const app = express();
+app.set("view engine", "ejs");
 
-app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 app.get('/', (req, res) => {
   const electionDate = moment('14/05/2023 08:00', 'DD/MM/YYYY HH:mm');
@@ -13,38 +15,7 @@ app.get('/', (req, res) => {
   let hours = Math.floor(duration.asHours() % 24);
   let minutes = Math.floor(duration.asMinutes() % 60);
   let seconds = Math.floor(duration.asSeconds() % 60);
-
-  const countdownDiv = `
-    <div class="countdown">
-      <h1>SEÇİME</h1>
-      <p>${days} gün, ${hours} saat, ${minutes} dakika, ${seconds} saniye</p>
-      <h1>KALDI<h1>
-    </div>
-  `;
-
-  res.send(`
-    <html>
-      <head>
-        <link rel="stylesheet" type="text/css" href="/styles.css">
-        <script>
-          setInterval(function() {
-            const now = new Date();
-            const electionDate = new Date('2023-05-14T08:00:00');
-            const duration = electionDate - now;
-            
-            days = Math.floor(duration / (1000 * 60 * 60 * 24));
-            hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-            minutes = Math.floor((duration / 1000 / 60) % 60);
-            seconds = Math.floor((duration / 1000) % 60);
-            document.querySelector('.countdown p').innerHTML = days + ' gün, ' + hours + ' saat, ' + minutes + ' dakika, ' + seconds + ' saniye';
-          }, 1000);
-        </script>
-      </head>
-      <body>
-        ${countdownDiv}
-      </body>
-    </html>
-  `);
+  res.render('index', {days: days, hours: hours, minutes: minutes, seconds: seconds});
 });
 
 app.listen(port, () => {
