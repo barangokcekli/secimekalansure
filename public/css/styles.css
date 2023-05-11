@@ -7,6 +7,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-family);
@@ -34,6 +36,20 @@ body {
     letter-spacing: 2px;
 }
 
+.timer {
+  background-color: #fff;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.value {
+  color: red;
+  font-size: 48px;
+}
+.txt {
+  margin: 18px;
+}
+
 footer {
   position: absolute;
   bottom: 0px;
@@ -58,7 +74,28 @@ footer a i:hover {
   .countdown p {
     font-size: 28px;
   }
+  .countdown .timer .value {
+    font-size: 36px;
+    margin: 0;
+    
+  }
+
+  .countdown .timer .txt {
+    margin: 8px;
+  }
 }
+
+@media screen and (max-width: 689px) {
+  .countdown h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .countdown .timer {
+    font-size: 24px;
+  }
+}
+  
 
 @media screen and (max-width: 561px) {
   .countdown h1 {
@@ -66,10 +103,19 @@ footer a i:hover {
     margin-bottom: 12px;
   }
   
-  .countdown p {
+  .countdown .timer {
     font-size: 24px;
   }
-  
+
+  .countdown .timer .value {
+    font-size: 30px;
+
+    
+  }
+
+  .countdown .timer .txt {
+    margin: 3px;
+  }
 }
 
 @media screen and (max-width: 488px) {
@@ -78,10 +124,20 @@ footer a i:hover {
     margin-bottom: 12px;
   }
   
-  .countdown p {
+  .countdown .timer {
     font-size: 16px;
+    padding: 0%;
+    
+  }
+  .countdown .timer .value {
+    font-size: 16px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .countdown .timer .txt {
+    font-size: 16px;
+    margin: 0;
+    
   }
 }
-
-
-  
