@@ -1,6 +1,6 @@
 setInterval(function() {
   const now = new Date();
-  const electionDate = new Date('2023-05-14T08:00:00');
+  const electionDate = new Date('2023-05-28T08:00:00');
   const duration = electionDate - now;
   
   let days = Math.floor(duration / (1000 * 60 * 60 * 24));
@@ -10,7 +10,7 @@ setInterval(function() {
   document.querySelector('.countdown .timer').innerHTML = '<span class="value">' + days + '</span><span class="txt">gün</span><span class="value">' + hours + '</span><span class="txt">saat</span><span class="value">' + minutes + '</span><span class="txt">dakika</span><span class="value">' + seconds + '</span><span class="txt">saniye</span>';
 
   if (duration <= 0) {
-      const electionEnded = new Date('2023-05-14T17:00:00');
+      const electionEnded = new Date('2023-05-28T17:00:00');
       var duration2 = electionEnded - now;
       let hours2 = Math.floor((duration2 / (1000 * 60 * 60)) % 24);
       let minutes2 = Math.floor((duration2 / 1000 / 60) % 60);

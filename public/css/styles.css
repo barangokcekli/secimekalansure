@@ -14,6 +14,12 @@ body {
   font-family: var(--font-family);
 }
 
+.election-date {
+  font-size: 24px;
+  font-style: italic;
+
+}
+
 .countdown {
   position: absolute;
   top: 50%;
@@ -29,7 +35,7 @@ body {
   text-transform: uppercase;
 }
 
-.countdown p {
+.countdown .timer {
     white-space: nowrap;
     font-weight: 600;
     font-size: 36px;
